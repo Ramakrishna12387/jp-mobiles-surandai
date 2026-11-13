@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#082f49">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>JP Mobiles | Authorized 5G Smartphone Showroom - Surandai, Tenkasi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased pb-24 lg:pb-0 selection:bg-sky-400 selection:text-slate-950">
+
+    <!-- Top Strip -->
+    <div class="bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500 text-slate-950 text-[11px] sm:text-xs font-bold py-1.5 px-3 shadow">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <span class="truncate"><i class="fa-solid fa-location-dot mr-1"></i> Main Road, Surandai, Tenkasi District (TN 76)</span>
+            <div class="flex items-center gap-1.5 shrink-0 ml-2">
+                <a href="tel:+919876543210" class="bg-slate-950 text-sky-400 px-2.5 py-0.5 rounded-full font-bold">
+                    <i class="fa-solid fa-phone mr-1"></i> Call JP Mobiles
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Header -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-sky-500/25 shadow-lg">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- JP Mobiles Brand Logo -->
+                <div onclick="navigateTo('home')" class="flex items-center gap-2.5 cursor-pointer">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-slate-950 font-bold text-xl sm:text-2xl shadow border border-sky-200">
+                        JP
+                    </div>
+                    <div>
+                        <h1 class="text-lg sm:text-2xl font-bold tracking-wide text-white leading-tight">
+                            JP <span class="text-sky-400">MOBILES</span>
+                        </h1>
+                        <p class="text-[10px] sm:text-xs text-slate-400 tracking-wider uppercase">Surandai • Tenkasi (TN 76)</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Quick Action Buttons -->
+                <div class="flex lg:hidden items-center gap-1.5">
+                    <button onclick="navigateTo('contact')" class="p-2 rounded-lg bg-slate-800 border border-slate-700 text-sky-400 text-xs font-bold">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </button>
+                    <button onclick="openWhatsApp('Vanakkam JP Mobiles Surandai! Today mobile offers sollunga.')" class="px-3 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1 shadow">
+                        <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center space-x-2">
+                    <button onclick="navigateTo('home')" class="nav-btn active-nav px-4 py-2 rounded-lg text-base font-bold transition" data-page="home">Home</button>
+                    <button onclick="navigateTo('catalog')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="catalog">Smartphones</button>
+                    <button onclick="navigateTo('service')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="service">Express Service</button>
+                    <button onclick="navigateTo('exchange')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="exchange">Exchange & EMI</button>
+                    <button onclick="navigateTo('contact')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="contact">Showroom</button>
+                    <button onclick="navigateTo('admin')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold text-sky-400 border border-sky-500/40 bg-sky-500/10 ml-2 transition" data-page="admin">
+                        <i class="fa-solid fa-lock mr-1"></i> Admin
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         PAGE 1: HOME PAGE
+    =========================================== -->
+    <main id="page-home" class="page-section">
+        <!-- Quick Mobile Story Circles -->
+        <section class="bg-slate-900/70 border-b border-slate-800 py-3 px-3 overflow-x-auto no-scrollbar">
+            <div class="max-w-7xl mx-auto flex items-center justify-between sm:justify-center gap-4 sm:gap-8 min-w-max">
+                <button onclick="quickCategoryJump('5G Mobiles')" class="flex flex-col items-center gap-1">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-sky-400 flex items-center justify-center text-sky-400 text-xl shadow">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200">5G Phones</span>
+                </button>
+                <button onclick="quickCategoryJump('iPhones & Flagship')" class="flex flex-col items-center gap-1">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-sky-500/50 flex items-center justify-center text-amber-400 text-xl shadow">
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200">iPhones</span>
+                </button>
+                <button onclick="quickCategoryJump('Pre-Owned')" class="flex flex-col items-center gap-1">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-sky-500/50 flex items-center justify-center text-emerald-400 text-xl shadow">
+                        <i class="fa-solid fa-rotate"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200">Demo / Used</span>
+                </button>
+                <button onclick="navigateTo('service')" class="flex flex-col items-center gap-1">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-sky-500/50 flex items-center justify-center text-orange-400 text-xl shadow">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200">IC & Display</span>
+                </button>
+                <button onclick="navigateTo('exchange')" class="flex flex-col items-center gap-1">
+                    <div class="w-14 h-14 rounded-full bg-slate-800 border-2 border-sky-500/50 flex items-center justify-center text-purple-400 text-xl shadow">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-200">0% Bajaj EMI</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Hero Showroom Banner -->
+        <section class="py-6 sm:py-10 px-3 sm:px-6 max-w-7xl mx-auto">
+            <div class="bg-gradient-to-br from-slate-900 via-sky-950/40 to-slate-900 border border-sky-500/30 rounded-2xl p-4 sm:p-8 shadow-xl">
+                <div class="grid lg:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-4">
+                        <span class="inline-block px-3 py-1 rounded-full bg-sky-400 text-slate-950 text-xs font-bold uppercase">
+                            Welcome to JP Mobiles • Surandai
+                        </span>
+                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                            Surandai's Mega Hub for <span class="text-sky-400 underline">New 5G Mobiles</span> & A+ Used Phones!
+                        </h2>
+                        <p class="text-slate-300 text-sm sm:text-base">
+                            All Brand New Mobiles • Verified Second-Hand iPhones & Androids • 0% Interest Bajaj / IDFC EMI • Free Smart Watch & Neckband Combo!
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 pt-1">
+                            <button onclick="navigateTo('catalog')" class="py-3 px-4 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-sm sm:text-base shadow flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-bag-shopping"></i> Explore Stock
+                            </button>
+                            <button onclick="navigateTo('service')" class="py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-wrench text-sky-400"></i> Repair Center
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Normal Local Photo Banner -->
+                    <div>
+                        <img src="images/jp-banner.jpg" 
+                             onerror="this.src='https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=80'" 
+                             alt="JP Mobiles Surandai Showroom" 
+                             class="w-full h-48 sm:h-64 object-cover rounded-xl border border-sky-500/30">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Deals Grid (2-Column on Phone) -->
+        <section class="py-4 px-3 sm:px-6 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">JP Mobiles Special Offers</h3>
+                    <p class="text-xs text-slate-400">Best Price Guaranteed in Surandai & Tenkasi</p>
+                </div>
+                <button onclick="navigateTo('catalog')" class="text-sky-400 text-sm font-bold flex items-center gap-1">
+                    View All <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+            <div id="home-featured-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+                <!-- Populated by script.js -->
+            </div>
+        </section>
+
+        <!-- JP Mobiles Why Choose Us Banner -->
+        <section class="py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
+                    <i class="fa-solid fa-gift text-2xl text-sky-400 mb-2"></i>
+                    <h4 class="text-sm sm:text-base font-bold text-white">Assured Gifts</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Neckband / Watch Free with every mobile</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
+                    <i class="fa-solid fa-id-card text-2xl text-emerald-400 mb-2"></i>
+                    <h4 class="text-sm sm:text-base font-bold text-white">Aadhaar EMI</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Bajaj, IDFC & TVS 0% Downpayment</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
+                    <i class="fa-solid fa-bolt text-2xl text-amber-400 mb-2"></i>
+                    <h4 class="text-sm sm:text-base font-bold text-white">20-Min Service</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Original Combo Display & Battery Change</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
+                    <i class="fa-solid fa-hand-holding-dollar text-2xl text-purple-400 mb-2"></i>
+                    <h4 class="text-sm sm:text-base font-bold text-white">Spot Exchange</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Highest cash value for your old mobile</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================
+         PAGE 2: SMARTPHONES & ACCESSORIES CATALOG
+    =========================================== -->
+    <main id="page-catalog" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+        <div class="mb-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">JP Mobiles Live Stock</h2>
+            <p class="text-xs sm:text-sm text-slate-400">New 5G Smartphones, Pre-Owned iPhones & Original Accessories.</p>
+        </div>
+
+        <!-- Sticky Search & Filter Bar -->
+        <div class="sticky top-16 z-30 bg-slate-950/95 backdrop-blur py-2 space-y-2.5 mb-4 border-b border-slate-800">
+            <div class="relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input" oninput="searchCatalog()" placeholder="Search iPhone, Vivo, Samsung, Redmi..." class="w-full pl-10 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm sm:text-base text-white focus:outline-none focus:border-sky-400">
+            </div>
+            <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+                <button onclick="filterProducts('all')" class="cat-btn active-cat shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold transition" data-cat="all">All Stock</button>
+                <button onclick="filterProducts('5G Mobiles')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="5G Mobiles">5G Mobiles</button>
+                <button onclick="filterProducts('iPhones & Flagship')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="iPhones & Flagship">iPhones & Flagship</button>
+                <button onclick="filterProducts('Pre-Owned')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Pre-Owned">Second Hand (Used)</button>
+                <button onclick="filterProducts('Accessories')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Accessories">Accessories</button>
+            </div>
+        </div>
+
+        <div id="catalog-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+            <!-- Populated by script.js -->
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 3: EXPRESS SERVICE CENTER
+    =========================================== -->
+    <main id="page-service" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- Instant Service Slot Booking -->
+            <div class="bg-slate-900 border border-sky-500/30 rounded-2xl p-5 sm:p-8">
+                <span class="text-sky-400 text-xs font-bold uppercase">JP Mobile Care • Surandai</span>
+                <h2 class="text-2xl font-bold text-white mt-1 mb-1">Book Express Mobile Repair</h2>
+                <p class="text-xs sm:text-sm text-slate-400 mb-4">Original Display Combo, Battery & Chiplevel IC Service with Warranty.</p>
+
+                <form onsubmit="submitServiceBooking(event)" class="space-y-3.5">
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Customer Name</label>
+                        <input type="text" id="srv-name" required placeholder="Enter Your Name" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Mobile Number</label>
+                        <input type="tel" id="srv-phone" required placeholder="10-Digit Mobile Number" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Mobile Brand & Model</label>
+                        <input type="text" id="srv-model" required placeholder="e.g., iPhone 13 / Vivo V30 / Redmi" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Select Issue</label>
+                        <select id="srv-issue" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                            <option value="Broken Display / Touch Change">Broken Display / Touch Change</option>
+                            <option value="Battery Replacement">Battery Replacement (With Warranty)</option>
+                            <option value="Touch Glass Only (OCA) Change">Touch Glass Only (OCA) Change</option>
+                            <option value="Charging Port / Speaker / Mic Issue">Charging Port / Speaker / Mic Issue</option>
+                            <option value="Dead Phone / Water Damage / Unlock">Dead Phone / Water Damage / Unlock</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-base shadow">
+                        <i class="fa-brands fa-whatsapp mr-1"></i> Book Repair on WhatsApp
+                    </button>
+                </form>
+            </div>
+
+            <!-- Live Repair Tracker & Service Rates -->
+            <div class="space-y-5">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+                    <h3 class="text-lg font-bold text-white mb-1"><i class="fa-solid fa-satellite-dish text-sky-400 mr-1.5"></i> Track Service Status</h3>
+                    <p class="text-xs text-slate-400 mb-3">Try Demo Job ID: <strong class="text-sky-400">JP101</strong> or <strong class="text-sky-400">JP102</strong></p>
+                    <div class="flex gap-2">
+                        <input type="text" id="repair-ticket-input" placeholder="Enter ID (JP101)" class="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white uppercase">
+                        <button onclick="checkRepairStatus()" class="px-5 py-2.5 rounded-xl bg-sky-400 text-slate-950 font-bold text-sm">Track</button>
+                    </div>
+                    <div id="repair-status-output" class="mt-3 hidden p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-sm"></div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+                    <h4 class="text-lg font-bold text-white mb-3">JP Mobiles Express Service Rates</h4>
+                    <div class="space-y-2.5 text-sm">
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-300">Universal / Original Display Combo</span>
+                            <span class="font-bold text-sky-400">From ₹1,099</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-300">High-Power Battery (6 Months Warranty)</span>
+                            <span class="font-bold text-sky-400">From ₹649</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-300">Charging Pin / CC Board Replacement</span>
+                            <span class="font-bold text-sky-400">From ₹250</span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span class="text-slate-300">iPhone Battery & Display Coding Service</span>
+                            <span class="font-bold text-sky-400">Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 4: EXCHANGE & BAJAJ EMI CALCULATOR
+    =========================================== -->
+    <main id="page-exchange" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- EMI Calculator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8">
+                <span class="text-sky-400 text-xs font-bold uppercase">Bajaj Finserv • IDFC First • TVS Credit</span>
+                <h3 class="text-2xl font-bold text-white mt-1 mb-1">Easy EMI Calculator</h3>
+                <p class="text-xs text-slate-400 mb-4">Bring Aadhaar & PAN Card to JP Mobiles Surandai for instant approval.</p>
+
+                <div class="space-y-3.5">
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Mobile Price (₹)</label>
+                        <input type="number" id="emi-price" value="19999" oninput="calculateEMI()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Downpayment (₹)</label>
+                        <input type="number" id="emi-down" value="2999" oninput="calculateEMI()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Tenure (Months)</label>
+                        <select id="emi-months" onchange="calculateEMI()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                            <option value="6">6 Months (0% No-Cost EMI)</option>
+                            <option value="8" selected>8 Months Standard EMI</option>
+                            <option value="12">12 Months Easy EMI</option>
+                        </select>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-sky-500/40 text-center">
+                        <p class="text-xs text-slate-400">Monthly Installment:</p>
+                        <h4 id="emi-result" class="text-2xl sm:text-3xl font-bold text-sky-400 my-1">₹2,125 / month</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Old Phone Exchange Estimator -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8">
+                <span class="text-emerald-400 text-xs font-bold uppercase">Best Exchange Price in Surandai</span>
+                <h3 class="text-2xl font-bold text-white mt-1 mb-1">Old Mobile Exchange Estimator</h3>
+                <p class="text-xs text-slate-400 mb-4">Exchange your old 4G/5G phone for a brand new smartphone.</p>
+
+                <div class="space-y-3.5">
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Old Phone Purchase Price</label>
+                        <select id="ex-base" onchange="calculateExchange()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                            <option value="8000">Under ₹10,000</option>
+                            <option value="16000" selected>₹12,000 - ₹20,000</option>
+                            <option value="28000">₹20,000 - ₹35,000</option>
+                            <option value="50000">Above ₹40,000 (iPhone / Flagship)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Condition</label>
+                        <select id="ex-cond" onchange="calculateExchange()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                            <option value="0.55">Clean & Working Perfectly</option>
+                            <option value="0.40" selected>Normal Wear & Tear</option>
+                            <option value="0.22">Broken Glass / Display Issue</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs sm:text-sm font-bold text-slate-300 mb-1">Box & Original Charger</label>
+                        <select id="ex-box" onchange="calculateExchange()" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm sm:text-base text-white">
+                            <option value="1200">Available (+₹1,200 Extra)</option>
+                            <option value="0">Mobile Only</option>
+                        </select>
+                    </div>
+                    <div class="p-4 rounded-xl bg-slate-950 border border-emerald-500/40 text-center">
+                        <p class="text-xs text-slate-400">Estimated Exchange Value:</p>
+                        <h4 id="ex-result" class="text-2xl sm:text-3xl font-bold text-emerald-400 my-1">₹8,600</h4>
+                        <button onclick="openWhatsApp('Vanakkam JP Mobiles Surandai! Naan ennoda old phone exchange pathi kekanum.')" class="mt-1 px-4 py-2 rounded-lg bg-sky-400 text-slate-950 font-bold text-xs">
+                            Enquire Exchange on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 5: SHOWROOM LOCATION & CONTACT
+    =========================================== -->
+    <main id="page-contact" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 space-y-4">
+                <span class="text-sky-400 text-xs font-bold uppercase">Visit Our Showroom</span>
+                <h2 class="text-2xl font-bold text-white">JP Mobiles - Surandai</h2>
+                <p class="text-sm text-slate-300">Main Road, Near Bus Stand, Surandai, Tenkasi District, Tamil Nadu - 627859.</p>
+                <p class="text-sm text-sky-400 font-bold"><i class="fa-solid fa-clock mr-1"></i> Working Hours: 9:00 AM to 9:30 PM (All 7 Days)</p>
+                
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                    <a href="tel:+919876543210" class="py-3 rounded-xl bg-sky-400 text-slate-950 font-bold text-sm text-center flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-solid fa-phone"></i> Call JP Mobiles
+                    </a>
+                    <button onclick="openWhatsApp('Vanakkam JP Mobiles Surandai!')" class="py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                    </button>
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden h-72 sm:h-96">
+                <iframe src="https://www.google.com/maps?q=Surandai,Tenkasi,Tamil+Nadu&output=embed" class="w-full h-full border-0" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+         PAGE 6: OWNER ADMIN (LOGIN + CAMERA UPLOAD)
+    =========================================== -->
+    <main id="page-admin" class="page-section hidden py-6 px-3 sm:px-6 max-w-4xl mx-auto">
+        <!-- Admin Login Box -->
+        <div id="admin-login-box" class="max-w-md mx-auto bg-slate-900 border border-sky-500/40 rounded-2xl p-6 shadow-2xl">
+            <div class="text-center mb-5">
+                <div class="w-14 h-14 rounded-full bg-sky-500/10 border border-sky-500/40 text-sky-400 flex items-center justify-center mx-auto mb-2 text-xl">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white">JP Mobiles Admin Login</h2>
+                <p class="text-xs text-slate-400">Authorized Showroom Owner Access</p>
+            </div>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-3.5">
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Admin Username</label>
+                    <input type="text" id="login-user" required placeholder="jpmobiles" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-base text-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-300 mb-1">Admin Password</label>
+                    <input type="password" id="login-pass" required placeholder="••••••" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-base text-white">
+                </div>
+                <p id="login-error" class="text-red-400 text-xs font-bold hidden">Invalid Username or Password!</p>
+                <button type="submit" class="w-full py-3 rounded-xl bg-sky-400 text-slate-950 font-bold text-base">Login to Dashboard</button>
+                <p class="text-center text-xs text-slate-400">Demo: User: <strong class="text-sky-400">jpmobiles</strong> | Pass: <strong class="text-sky-400">jp123</strong></p>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard-box" class="hidden space-y-6">
+            <div class="bg-slate-900 border border-sky-500/40 rounded-2xl p-5">
+                <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Add New Mobile to JP Catalog</h2>
+                        <p class="text-xs text-slate-400">Take a live photo from your phone or upload from gallery</p>
+                    </div>
+                    <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-lg bg-red-500/20 text-red-300 text-xs font-bold">Logout</button>
+                </div>
+
+                <form onsubmit="addNewProduct(event)" class="space-y-3.5 mt-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Mobile / Product Name</label>
+                        <input type="text" id="adm-name" required placeholder="e.g., iPhone 15 (128GB) / Vivo V30" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Category</label>
+                            <select id="adm-cat" class="w-full px-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                                <option value="5G Mobiles">5G Mobiles</option>
+                                <option value="iPhones & Flagship">iPhones & Flagship</option>
+                                <option value="Pre-Owned">Second Hand (Used)</option>
+                                <option value="Accessories">Accessories</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-300 mb-1">Offer Price (₹)</label>
+                            <input type="number" id="adm-price" required placeholder="21999" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Specs & Free Gift Details</label>
+                        <input type="text" id="adm-specs" required placeholder="50MP Cam • Free Smart Watch + Glass" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                    </div>
+
+                    <!-- Phone Camera / Gallery Picker -->
+                    <div class="p-3.5 rounded-xl bg-slate-950 border border-sky-500/40">
+                        <label class="block text-xs font-bold text-sky-400 mb-2">
+                            <i class="fa-solid fa-camera mr-1"></i> Take Mobile Photo / Select from Phone Gallery
+                        </label>
+                        <input type="file" id="adm-file" accept="image/*" onchange="previewSelectedPhoto(event)" class="w-full text-xs text-slate-300 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-sky-400 file:text-slate-950 file:font-bold">
+                        <input type="text" id="adm-img-path" placeholder="Or folder path: images/phone.jpg" class="w-full mt-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs text-white">
+                    </div>
+
+                    <div id="photo-preview-container" class="hidden p-3 rounded-xl bg-slate-950 border border-emerald-500/40 flex items-center gap-3">
+                        <img id="photo-preview-img" src="" class="w-16 h-16 object-cover rounded-lg border border-sky-400">
+                        <span class="text-xs font-bold text-emerald-400">Photo Selected! Tap Publish below.</span>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-400 text-slate-950 font-bold text-base shadow">
+                        <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Publish to JP Mobiles Catalog
+                    </button>
+                </form>
+            </div>
+
+            <!-- Manage Stock List -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
+                <h3 class="text-lg font-bold text-white mb-3">Current JP Mobiles Stock</h3>
+                <div id="admin-inventory-table" class="space-y-2.5">
+                    <!-- Populated by script.js -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Desktop Footer -->
+    <footer class="hidden lg:block bg-slate-900 border-t border-slate-800 py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm text-slate-400">
+            <p>© 2026 <strong class="text-white">JP Mobiles</strong>, Main Road, Surandai, Tenkasi District (TN 76). All Rights Reserved.</p>
+            <p class="text-sky-400 font-bold">Sales • Service • Exchange • 0% Bajaj EMI</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         MOBILE APP BOTTOM NAVIGATION BAR
+    =========================================== -->
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-1.5 shadow-2xl">
+        <div class="grid grid-cols-5 gap-1 max-w-md mx-auto">
+            <button onclick="navigateTo('home')" class="mob-nav-btn active-mob-nav flex flex-col items-center py-1 rounded-xl" data-page="home">
+                <i class="fa-solid fa-house text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">Home</span>
+            </button>
+            <button onclick="navigateTo('catalog')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="catalog">
+                <i class="fa-solid fa-mobile-screen-button text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">Mobiles</span>
+            </button>
+            <button onclick="navigateTo('service')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="service">
+                <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">Repair</span>
+            </button>
+            <button onclick="navigateTo('exchange')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="exchange">
+                <i class="fa-solid fa-calculator text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">0% EMI</span>
+            </button>
+            <button onclick="navigateTo('admin')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="admin">
+                <i class="fa-solid fa-user-shield text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">Admin</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

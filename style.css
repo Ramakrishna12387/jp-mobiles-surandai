@@ -1,0 +1,52 @@
+/* Professional Times New Roman Typography */
+body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea {
+    font-family: 'Times New Roman', Times, serif !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide Scrollbar on Mobile Filter Pills */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Desktop Navigation Active State */
+.nav-btn {
+    color: #e2e8f0;
+}
+.active-nav {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: #020617 !important;
+}
+
+/* Mobile Bottom Bar Active Tab */
+.active-mob-nav {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.14);
+}
+
+/* Category Filter Active Pill */
+.active-cat {
+    background-color: #38bdf8 !important;
+    color: #020617 !important;
+    border-color: #38bdf8 !important;
+}
+
+/* Smooth App Page Transitions */
+.page-section {
+    animation: jpFadeIn 0.22s ease-out;
+}
+
+@keyframes jpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
