@@ -4,24 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#082f49">
+    <meta name="description" content="Welcome to JP Mobiles and JP CCTV, Surandai. Mobiles, CCTV cameras, Smart TVs, Home Theatre, accessories, installation and repair service.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JP Mobiles | Authorized 5G Smartphone Showroom - Surandai, Tenkasi</title>
+    <title>Welcome to JP Mobiles | JP CCTV • Smart TVs • Home Theatre • Surandai</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+/* Lightweight JP 3D identity + mobile-first motion */
+.jp-logo-3d{transform-style:preserve-3d;animation:jpFloat 4s ease-in-out infinite;box-shadow:0 8px 0 #075985,0 14px 24px #0008,inset 0 1px 0 #ffffff88}
+.jp-hero-title{ text-shadow:0 3px 0 #075985,0 8px 24px #0009; }
+.jp-orbit{animation:jpOrbit 12s linear infinite;transform-style:preserve-3d}
+@keyframes jpFloat{0%,100%{transform:translateY(0) rotateY(-9deg) rotateX(5deg)}50%{transform:translateY(-7px) rotateY(9deg) rotateX(-3deg)}}
+@keyframes jpOrbit{to{transform:rotateY(360deg) rotateX(12deg)}}
+@media(prefers-reduced-motion:reduce){.jp-logo-3d,.jp-orbit{animation:none!important}*{scroll-behavior:auto!important;transition:none!important}}
+/* Professional Times New Roman Typography */
+body, h1, h2, h3, h4, h5, h6, p, span, a, button, input, select, textarea {
+    font-family: 'Times New Roman', Times, serif !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide Scrollbar on Mobile Filter Pills */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Desktop Navigation Active State */
+.nav-btn {
+    color: #e2e8f0;
+}
+.active-nav {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: #020617 !important;
+}
+
+/* Mobile Bottom Bar Active Tab */
+.active-mob-nav {
+    color: #38bdf8 !important;
+    background-color: rgba(56, 189, 248, 0.14);
+}
+
+/* Category Filter Active Pill */
+.active-cat {
+    background-color: #38bdf8 !important;
+    color: #020617 !important;
+    border-color: #38bdf8 !important;
+}
+
+/* Smooth App Page Transitions */
+.page-section {
+    animation: jpFadeIn 0.22s ease-out;
+}
+
+@keyframes jpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased pb-24 lg:pb-0 selection:bg-sky-400 selection:text-slate-950">
 
     <!-- Top Strip -->
     <div class="bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500 text-slate-950 text-[11px] sm:text-xs font-bold py-1.5 px-3 shadow">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="truncate"><i class="fa-solid fa-location-dot mr-1"></i> Main Road, Surandai, Tenkasi District (TN 76)</span>
+            <span class="truncate"><i class="fa-solid fa-location-dot mr-1"></i> Opp. SBI Bank, Surandai – Sankarankovil Main Road, Surandai – 627859</span>
             <div class="flex items-center gap-1.5 shrink-0 ml-2">
-                <a href="tel:+919876543210" class="bg-slate-950 text-sky-400 px-2.5 py-0.5 rounded-full font-bold">
+                <a href="tel:+919080003223" class="bg-slate-950 text-sky-400 px-2.5 py-0.5 rounded-full font-bold">
                     <i class="fa-solid fa-phone mr-1"></i> Call JP Mobiles
                 </a>
             </div>
@@ -34,14 +95,14 @@
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- JP Mobiles Brand Logo -->
                 <div onclick="navigateTo('home')" class="flex items-center gap-2.5 cursor-pointer">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-slate-950 font-bold text-xl sm:text-2xl shadow border border-sky-200">
+                    <div class="jp-logo-3d w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-emerald-300 via-sky-400 to-blue-700 flex items-center justify-center text-slate-950 font-black text-xl sm:text-2xl border border-sky-100">
                         JP
                     </div>
                     <div>
                         <h1 class="text-lg sm:text-2xl font-bold tracking-wide text-white leading-tight">
-                            JP <span class="text-sky-400">MOBILES</span>
+                            JP <span class="text-sky-400">CCTV & MOBILES</span>
                         </h1>
-                        <p class="text-[10px] sm:text-xs text-slate-400 tracking-wider uppercase">Surandai • Tenkasi (TN 76)</p>
+                        <p class="text-[10px] sm:text-xs text-slate-400 tracking-wider uppercase">WELCOME TO JP MOBILES • SURANDAI</p>
                     </div>
                 </div>
 
@@ -59,6 +120,7 @@
                 <nav class="hidden lg:flex items-center space-x-2">
                     <button onclick="navigateTo('home')" class="nav-btn active-nav px-4 py-2 rounded-lg text-base font-bold transition" data-page="home">Home</button>
                     <button onclick="navigateTo('catalog')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="catalog">Smartphones</button>
+                    <button onclick="navigateTo('cctv')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="cctv">CCTV</button>
                     <button onclick="navigateTo('service')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="service">Express Service</button>
                     <button onclick="navigateTo('exchange')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="exchange">Exchange & EMI</button>
                     <button onclick="navigateTo('contact')" class="nav-btn px-4 py-2 rounded-lg text-base font-bold transition" data-page="contact">Showroom</button>
@@ -116,27 +178,37 @@
                 <div class="grid lg:grid-cols-2 gap-6 items-center">
                     <div class="space-y-4">
                         <span class="inline-block px-3 py-1 rounded-full bg-sky-400 text-slate-950 text-xs font-bold uppercase">
-                            Welcome to JP Mobiles • Surandai
+                            WELCOME TO JP MOBILES • JP CCTV • SURANDAI
                         </span>
                         <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                            Surandai's Mega Hub for <span class="text-sky-400 underline">New 5G Mobiles</span> & A+ Used Phones!
+                            Welcome to <span class="text-sky-400 underline">JP Mobiles</span>
                         </h2>
                         <p class="text-slate-300 text-sm sm:text-base">
-                            All Brand New Mobiles • Verified Second-Hand iPhones & Androids • 0% Interest Bajaj / IDFC EMI • Free Smart Watch & Neckband Combo!
+                            Your one-stop destination for Mobiles, CCTV Cameras, Smart TVs, Home Theatre Systems, Accessories, Installation and Repair Services.
                         </p>
+                        <div class="grid sm:grid-cols-2 gap-3 pt-2">
+                            <a href="tel:+919080009439" class="rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3 text-emerald-300">
+                                <span class="block text-xs font-bold uppercase">JP CCTV • Installation & Service</span>
+                                <strong class="text-lg">+91 90800 09439</strong>
+                            </a>
+                            <a href="tel:+919080003223" class="rounded-xl border border-sky-500/40 bg-sky-500/10 p-3 text-sky-300">
+                                <span class="block text-xs font-bold uppercase">JP Mobiles • Sales & Service</span>
+                                <strong class="text-lg">+91 90800 03223</strong>
+                            </a>
+                        </div>
                         <div class="grid grid-cols-2 gap-3 pt-1">
                             <button onclick="navigateTo('catalog')" class="py-3 px-4 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-bold text-sm sm:text-base shadow flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-bag-shopping"></i> Explore Stock
                             </button>
-                            <button onclick="navigateTo('service')" class="py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-wrench text-sky-400"></i> Repair Center
+                            <button onclick="navigateTo('cctv')" class="py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-video text-emerald-400"></i> CCTV Services
                             </button>
                         </div>
                     </div>
 
                     <!-- Normal Local Photo Banner -->
                     <div>
-                        <img src="images/jp-banner.jpg" 
+                        <img loading="lazy" decoding="async" src="images/jp-banner.jpg" 
                              onerror="this.src='https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=900&q=80'" 
                              alt="JP Mobiles Surandai Showroom" 
                              class="w-full h-48 sm:h-64 object-cover rounded-xl border border-sky-500/30">
@@ -145,11 +217,20 @@
             </div>
         </section>
 
+        <section class="max-w-7xl mx-auto px-3 sm:px-6 pb-3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <button onclick="filterProducts('CCTV Cameras');navigateTo('catalog')" class="rounded-xl border border-emerald-500/30 bg-slate-900 p-3 text-left"><i class="fa-solid fa-video text-emerald-400 text-xl"></i><b class="mt-2 block text-sm text-white">CCTV Cameras</b><span class="text-xs text-slate-400">Sales & installation</span></button>
+            <button onclick="filterProducts('Smart TVs');navigateTo('catalog')" class="rounded-xl border border-sky-500/30 bg-slate-900 p-3 text-left"><i class="fa-solid fa-tv text-sky-400 text-xl"></i><b class="mt-2 block text-sm text-white">Smart TVs</b><span class="text-xs text-slate-400">Latest models</span></button>
+            <button onclick="filterProducts('Home Theatre');navigateTo('catalog')" class="rounded-xl border border-purple-500/30 bg-slate-900 p-3 text-left"><i class="fa-solid fa-volume-high text-purple-400 text-xl"></i><b class="mt-2 block text-sm text-white">Home Theatre</b><span class="text-xs text-slate-400">Audio systems</span></button>
+            <button onclick="navigateTo('service')" class="rounded-xl border border-amber-500/30 bg-slate-900 p-3 text-left"><i class="fa-solid fa-screwdriver-wrench text-amber-400 text-xl"></i><b class="mt-2 block text-sm text-white">Mobile Service</b><span class="text-xs text-slate-400">Book a repair</span></button>
+          </div>
+        </section>
+
         <!-- Featured Deals Grid (2-Column on Phone) -->
         <section class="py-4 px-3 sm:px-6 max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-4">
                 <div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-white">JP Mobiles Special Offers</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">Explore JP Products & Latest Arrivals</h3>
                     <p class="text-xs text-slate-400">Best Price Guaranteed in Surandai & Tenkasi</p>
                 </div>
                 <button onclick="navigateTo('catalog')" class="text-sky-400 text-sm font-bold flex items-center gap-1">
@@ -166,22 +247,22 @@
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
                     <i class="fa-solid fa-gift text-2xl text-sky-400 mb-2"></i>
-                    <h4 class="text-sm sm:text-base font-bold text-white">Assured Gifts</h4>
-                    <p class="text-xs text-slate-400 mt-0.5">Neckband / Watch Free with every mobile</p>
+                    <h4 class="text-sm sm:text-base font-bold text-white">All Mobile Brands</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">A wide range of mobile brands available</p>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
                     <i class="fa-solid fa-id-card text-2xl text-emerald-400 mb-2"></i>
-                    <h4 class="text-sm sm:text-base font-bold text-white">Aadhaar EMI</h4>
-                    <p class="text-xs text-slate-400 mt-0.5">Bajaj, IDFC & TVS 0% Downpayment</p>
+                    <h4 class="text-sm sm:text-base font-bold text-white">Mobile Sales</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Sales and service for mobile phones</p>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
                     <i class="fa-solid fa-bolt text-2xl text-amber-400 mb-2"></i>
-                    <h4 class="text-sm sm:text-base font-bold text-white">20-Min Service</h4>
-                    <p class="text-xs text-slate-400 mt-0.5">Original Combo Display & Battery Change</p>
+                    <h4 class="text-sm sm:text-base font-bold text-white">CCTV Installation</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">CCTV camera installation and service</p>
                 </div>
                 <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center">
                     <i class="fa-solid fa-hand-holding-dollar text-2xl text-purple-400 mb-2"></i>
-                    <h4 class="text-sm sm:text-base font-bold text-white">Spot Exchange</h4>
+                    <h4 class="text-sm sm:text-base font-bold text-white">Bulk & Retail Orders</h4>
                     <p class="text-xs text-slate-400 mt-0.5">Highest cash value for your old mobile</p>
                 </div>
             </div>
@@ -193,8 +274,8 @@
     =========================================== -->
     <main id="page-catalog" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
         <div class="mb-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-white">JP Mobiles Live Stock</h2>
-            <p class="text-xs sm:text-sm text-slate-400">New 5G Smartphones, Pre-Owned iPhones & Original Accessories.</p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">JP Products & Live Stock</h2>
+            <p class="text-xs sm:text-sm text-slate-400">Mobiles • CCTV Cameras • Smart TVs • Home Theatre • Accessories. Stock and prices are updated by the shop owner.</p>
         </div>
 
         <!-- Sticky Search & Filter Bar -->
@@ -209,6 +290,9 @@
                 <button onclick="filterProducts('iPhones & Flagship')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="iPhones & Flagship">iPhones & Flagship</button>
                 <button onclick="filterProducts('Pre-Owned')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Pre-Owned">Second Hand (Used)</button>
                 <button onclick="filterProducts('Accessories')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Accessories">Accessories</button>
+                <button onclick="filterProducts('CCTV Cameras')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="CCTV Cameras">CCTV Cameras</button>
+                <button onclick="filterProducts('Smart TVs')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Smart TVs">Smart TVs</button>
+                <button onclick="filterProducts('Home Theatre')" class="cat-btn shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-slate-900 border border-slate-700 text-slate-300" data-cat="Home Theatre">Home Theatre</button>
             </div>
         </div>
 
@@ -377,23 +461,28 @@
     =========================================== -->
     <main id="page-contact" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-6">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 space-y-4">
-                <span class="text-sky-400 text-xs font-bold uppercase">Visit Our Showroom</span>
-                <h2 class="text-2xl font-bold text-white">JP Mobiles - Surandai</h2>
-                <p class="text-sm text-slate-300">Main Road, Near Bus Stand, Surandai, Tenkasi District, Tamil Nadu - 627859.</p>
-                <p class="text-sm text-sky-400 font-bold"><i class="fa-solid fa-clock mr-1"></i> Working Hours: 9:00 AM to 9:30 PM (All 7 Days)</p>
-                
-                <div class="grid grid-cols-2 gap-3 pt-2">
-                    <a href="tel:+919876543210" class="py-3 rounded-xl bg-sky-400 text-slate-950 font-bold text-sm text-center flex items-center justify-center gap-1.5 shadow">
-                        <i class="fa-solid fa-phone"></i> Call JP Mobiles
-                    </a>
-                    <button onclick="openWhatsApp('Vanakkam JP Mobiles Surandai!')" class="py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-1.5 shadow">
-                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
-                    </button>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 sm:p-8 space-y-5">
+                <span class="text-emerald-400 text-xs font-bold uppercase">JP CCTV & Mobiles • Surandai</span>
+                <h2 class="text-2xl font-bold text-white">Visit Our Showroom</h2>
+                <p class="text-sm text-slate-300">Opposite SBI Bank, Surandai – Sankarankovil Main Road, Surandai – 627859.</p>
+                <div class="rounded-xl border border-emerald-500/30 p-4">
+                    <h3 class="font-bold text-white">JP CCTV</h3>
+                    <p class="text-sm text-slate-300 mt-1">All Types of Cameras Available • Installation & Service</p>
+                    <a class="inline-block mt-2 text-emerald-400 font-bold" href="tel:+919080009439">+91 90800 09439</a>
+                </div>
+                <div class="rounded-xl border border-sky-500/30 p-4">
+                    <h3 class="font-bold text-white">JP Mobiles</h3>
+                    <p class="text-sm text-slate-300 mt-1">All Mobile Brands Available • Sales & Service</p>
+                    <a class="inline-block mt-2 text-sky-400 font-bold" href="tel:+919080003223">+91 90800 03223</a>
+                </div>
+                <p class="text-sm text-slate-300">Corporate & Bulk Orders • Retail Orders</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://wa.me/919080009439" class="rounded-xl bg-emerald-600 px-4 py-3 font-bold text-white">WhatsApp CCTV</a>
+                    <a href="https://wa.me/919080003223" class="rounded-xl bg-sky-500 px-4 py-3 font-bold text-slate-950">WhatsApp Mobiles</a>
                 </div>
             </div>
             <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden h-72 sm:h-96">
-                <iframe src="https://www.google.com/maps?q=Surandai,Tenkasi,Tamil+Nadu&output=embed" class="w-full h-full border-0" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps?q=Opposite+SBI+Bank,Surandai,Tenkasi,Tamil+Nadu+627859&output=embed" class="w-full h-full border-0" loading="lazy" title="JP CCTV and Mobiles location"></iframe>
             </div>
         </div>
     </main>
@@ -409,7 +498,7 @@
                     <i class="fa-solid fa-user-shield"></i>
                 </div>
                 <h2 class="text-2xl font-bold text-white">JP Mobiles Admin Login</h2>
-                <p class="text-xs text-slate-400">Authorized Showroom Owner Access</p>
+                <p class="text-xs text-slate-400">Shop owner product management • Demo login shown below</p>
             </div>
             <form onsubmit="handleAdminLogin(event)" class="space-y-3.5">
                 <div>
@@ -422,7 +511,7 @@
                 </div>
                 <p id="login-error" class="text-red-400 text-xs font-bold hidden">Invalid Username or Password!</p>
                 <button type="submit" class="w-full py-3 rounded-xl bg-sky-400 text-slate-950 font-bold text-base">Login to Dashboard</button>
-                <p class="text-center text-xs text-slate-400">Demo: User: <strong class="text-sky-400">jpmobiles</strong> | Pass: <strong class="text-sky-400">jp123</strong></p>
+                <p class="text-center text-xs text-amber-300">Demo login only: User <b>jpmobiles</b> • Password <b>jp123</b>. Change this before publishing publicly.</p>
             </form>
         </div>
 
@@ -431,15 +520,15 @@
             <div class="bg-slate-900 border border-sky-500/40 rounded-2xl p-5">
                 <div class="flex justify-between items-center pb-4 border-b border-slate-800">
                     <div>
-                        <h2 class="text-xl font-bold text-white">Add New Mobile to JP Catalog</h2>
-                        <p class="text-xs text-slate-400">Take a live photo from your phone or upload from gallery</p>
+                        <h2 class="text-xl font-bold text-white">Add New Product / Service to JP Catalog</h2>
+                        <p class="text-xs text-slate-400">Add mobiles, CCTV cameras, Smart TVs, Home Theatre systems and accessories with photos</p>
                     </div>
                     <button onclick="logoutAdmin()" class="px-3 py-1.5 rounded-lg bg-red-500/20 text-red-300 text-xs font-bold">Logout</button>
                 </div>
 
                 <form onsubmit="addNewProduct(event)" class="space-y-3.5 mt-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-300 mb-1">Mobile / Product Name</label>
+                        <label class="block text-xs font-bold text-slate-300 mb-1">Product / Service Name</label>
                         <input type="text" id="adm-name" required placeholder="e.g., iPhone 15 (128GB) / Vivo V30" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
                     </div>
                     <div class="grid grid-cols-2 gap-3">
@@ -450,11 +539,16 @@
                                 <option value="iPhones & Flagship">iPhones & Flagship</option>
                                 <option value="Pre-Owned">Second Hand (Used)</option>
                                 <option value="Accessories">Accessories</option>
+                                <option value="CCTV Cameras">CCTV Cameras</option>
+                                <option value="Smart TVs">Smart TVs</option>
+                                <option value="Home Theatre">Home Theatre</option>
+                                <option value="CCTV Accessories">CCTV Accessories</option>
+                                <option value="Mobile Service">Mobile Service</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-300 mb-1">Offer Price (₹)</label>
-                            <input type="number" id="adm-price" required placeholder="21999" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
+                            <input type="number" id="adm-price" min="0" placeholder="Price (optional; 0 = Ask for Price)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white">
                         </div>
                     </div>
                     <div>
@@ -477,14 +571,14 @@
                     </div>
 
                     <button type="submit" class="w-full py-3.5 rounded-xl bg-sky-400 text-slate-950 font-bold text-base shadow">
-                        <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Publish to JP Mobiles Catalog
+                        <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Publish to JP Products Catalog
                     </button>
                 </form>
             </div>
 
             <!-- Manage Stock List -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5">
-                <h3 class="text-lg font-bold text-white mb-3">Current JP Mobiles Stock</h3>
+                <h3 class="text-lg font-bold text-white mb-3">Current Products & Services</h3>
                 <div id="admin-inventory-table" class="space-y-2.5">
                     <!-- Populated by script.js -->
                 </div>
@@ -495,8 +589,8 @@
     <!-- Desktop Footer -->
     <footer class="hidden lg:block bg-slate-900 border-t border-slate-800 py-8 mt-12">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm text-slate-400">
-            <p>© 2026 <strong class="text-white">JP Mobiles</strong>, Main Road, Surandai, Tenkasi District (TN 76). All Rights Reserved.</p>
-            <p class="text-sky-400 font-bold">Sales • Service • Exchange • 0% Bajaj EMI</p>
+            <p>© 2026 <strong class="text-white">JP CCTV & Mobiles</strong>, Opp. SBI Bank, Surandai – Sankarankovil Main Road, Surandai – 627859. All Rights Reserved.</p>
+            <p class="text-sky-400 font-bold">CCTV Installation & Service • Mobile Sales & Service</p>
         </div>
     </footer>
 
@@ -504,7 +598,7 @@
          MOBILE APP BOTTOM NAVIGATION BAR
     =========================================== -->
     <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-1.5 shadow-2xl">
-        <div class="grid grid-cols-5 gap-1 max-w-md mx-auto">
+        <div class="grid grid-cols-6 gap-1 max-w-lg mx-auto">
             <button onclick="navigateTo('home')" class="mob-nav-btn active-mob-nav flex flex-col items-center py-1 rounded-xl" data-page="home">
                 <i class="fa-solid fa-house text-base"></i>
                 <span class="text-[11px] font-bold mt-0.5">Home</span>
@@ -512,6 +606,10 @@
             <button onclick="navigateTo('catalog')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="catalog">
                 <i class="fa-solid fa-mobile-screen-button text-base"></i>
                 <span class="text-[11px] font-bold mt-0.5">Mobiles</span>
+            </button>
+            <button onclick="navigateTo('cctv')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="cctv">
+                <i class="fa-solid fa-video text-base"></i>
+                <span class="text-[11px] font-bold mt-0.5">CCTV</span>
             </button>
             <button onclick="navigateTo('service')" class="mob-nav-btn flex flex-col items-center py-1 rounded-xl text-slate-400" data-page="service">
                 <i class="fa-solid fa-screwdriver-wrench text-base"></i>
@@ -528,7 +626,461 @@
         </div>
     </nav>
 
+
+    <!-- PAGE: JP CCTV -->
+    <main id="page-cctv" class="page-section hidden py-6 px-3 sm:px-6 max-w-7xl mx-auto">
+      <section class="mb-6 rounded-2xl border border-emerald-500/30 bg-gradient-to-br from-slate-900 via-emerald-950/40 to-slate-900 p-5 sm:p-8">
+        <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider">JP CCTV • Surandai</span>
+        <h2 class="mt-2 text-2xl sm:text-4xl font-bold text-white">Smart Security for Your Home, Shop & Office</h2>
+        <p class="mt-3 max-w-3xl text-sm sm:text-base text-slate-300">CCTV camera sales, professional installation, wiring, service and repair — all at one trusted address in Surandai.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="tel:+919080009439" class="rounded-xl bg-emerald-500 px-5 py-3 font-bold text-slate-950">Call CCTV: 90800 09439</a>
+          <a target="_blank" rel="noopener" href="https://wa.me/919080009439?text=Hello%20JP%20CCTV%2C%20I%20need%20a%20CCTV%20quote." class="rounded-xl bg-slate-800 border border-slate-700 px-5 py-3 font-bold text-white"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp CCTV</a>
+        </div>
+      </section>
+      <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-6">
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5"><i class="fa-solid fa-camera text-2xl text-emerald-400"></i><h3 class="mt-3 text-lg font-bold text-white">Camera Sales</h3><p class="mt-2 text-sm text-slate-400">Dome and bullet cameras for homes, shops and offices. Single cameras and complete kits.</p></article>
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5"><i class="fa-solid fa-screwdriver-wrench text-2xl text-emerald-400"></i><h3 class="mt-3 text-lg font-bold text-white">Installation & Wiring</h3><p class="mt-2 text-sm text-slate-400">Professional camera placement, cabling, recorder setup and system testing.</p></article>
+        <article class="rounded-2xl border border-slate-800 bg-slate-900 p-5"><i class="fa-solid fa-shield-halved text-2xl text-emerald-400"></i><h3 class="mt-3 text-lg font-bold text-white">Service & Repair</h3><p class="mt-2 text-sm text-slate-400">Service and repair for existing CCTV systems, upgrades and business requirements.</p></article>
+      </section>
+      <section class="mb-6 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-emerald-500/30 bg-slate-900 p-5 sm:p-7">
+          <span class="text-emerald-400 text-xs font-bold uppercase">JP CCTV • Service Request</span>
+          <h3 class="mt-2 text-xl font-bold text-white">Book CCTV Installation / Service</h3>
+          <p class="mt-1 mb-4 text-sm text-slate-400">Share your details. Your request will open in WhatsApp to JP CCTV.</p>
+          <form onsubmit="submitCCTVBooking(event)" class="space-y-3">
+            <input id="cctv-customer" required placeholder="Your name" class="w-full rounded-xl bg-slate-950 border border-slate-700 p-3 text-white">
+            <input id="cctv-phone" required type="tel" pattern="[0-9 +()-]{10,}" placeholder="Mobile number" class="w-full rounded-xl bg-slate-950 border border-slate-700 p-3 text-white">
+            <input id="cctv-location" required placeholder="Installation location / area" class="w-full rounded-xl bg-slate-950 border border-slate-700 p-3 text-white">
+            <select id="cctv-request" class="w-full rounded-xl bg-slate-950 border border-slate-700 p-3 text-white"><option>New CCTV installation</option><option>Existing camera service / repair</option><option>Camera / DVR / NVR enquiry</option><option>Home / Shop / Office security consultation</option></select>
+            <textarea id="cctv-notes" rows="2" placeholder="Number of cameras or additional details (optional)" class="w-full rounded-xl bg-slate-950 border border-slate-700 p-3 text-white"></textarea>
+            <button class="w-full rounded-xl bg-emerald-500 p-3 font-bold text-slate-950">Book CCTV Service on WhatsApp</button>
+          </form>
+        </div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-7"><span class="text-sky-400 text-xs font-bold uppercase">JP Entertainment & Home</span><h3 class="mt-2 text-xl font-bold text-white">More than Mobiles</h3><p class="mt-2 text-sm text-slate-400">Browse Smart TVs, Home Theatre systems, CCTV cameras and accessories. The shop owner can add current models, product photos and prices from the Admin page.</p><div class="mt-4 flex flex-wrap gap-2"><button onclick="filterProducts('Smart TVs');navigateTo('catalog')" class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-white">Smart TVs</button><button onclick="filterProducts('Home Theatre');navigateTo('catalog')" class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-white">Home Theatre</button><button onclick="filterProducts('CCTV Cameras');navigateTo('catalog')" class="rounded-lg bg-slate-800 px-3 py-2 text-sm text-white">CCTV Products</button></div></div>
+      </section>
+      <section class="rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-7">
+        <h3 class="text-xl font-bold text-white">How CCTV Installation Works</h3>
+        <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-xl bg-slate-950 p-4"><b class="text-emerald-400">01</b><p class="mt-2 font-bold text-white">Call or Visit</p><p class="mt-1 text-sm text-slate-400">Tell us your site and coverage needs.</p></div>
+          <div class="rounded-xl bg-slate-950 p-4"><b class="text-emerald-400">02</b><p class="mt-2 font-bold text-white">Choose Equipment</p><p class="mt-1 text-sm text-slate-400">Select cameras and recorder for your budget.</p></div>
+          <div class="rounded-xl bg-slate-950 p-4"><b class="text-emerald-400">03</b><p class="mt-2 font-bold text-white">Installation</p><p class="mt-1 text-sm text-slate-400">Cameras and wiring are fitted at your location.</p></div>
+          <div class="rounded-xl bg-slate-950 p-4"><b class="text-emerald-400">04</b><p class="mt-2 font-bold text-white">Testing & Support</p><p class="mt-1 text-sm text-slate-400">System is tested; contact us for future service.</p></div>
+        </div>
+      </section>
+      <section class="mt-6 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-emerald-500/30 bg-slate-900 p-5 sm:p-7"><h3 class="text-xl font-bold text-white">Need CCTV for your property?</h3><p class="mt-2 text-sm text-slate-400">Contact JP CCTV for a quote, installation or service enquiry.</p><a class="mt-4 inline-flex rounded-xl bg-emerald-500 px-5 py-3 font-bold text-slate-950" href="https://wa.me/919080009439?text=Hello%20JP%20CCTV%2C%20please%20share%20a%20CCTV%20quotation." target="_blank" rel="noopener">Get CCTV Quote on WhatsApp</a></div>
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 p-5 sm:p-7"><h3 class="text-xl font-bold text-white">One Shop. Two Services.</h3><p class="mt-2 text-sm text-slate-400">JP CCTV and JP Mobiles are available at the same showroom, opposite SBI Bank, Surandai – Sankarankovil Main Road, Surandai – 627859.</p><div class="mt-4 flex flex-wrap gap-3"><a class="text-emerald-400 font-bold" href="tel:+919080009439">CCTV: +91 90800 09439</a><a class="text-sky-400 font-bold" href="tel:+919080003223">Mobiles: +91 90800 03223</a></div></div>
+      </section>
+    </main>
+
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script>
+const SHOP_WHATSAPP = "919080003223";
+const ADMIN_USERNAME = "jpmobiles";
+const ADMIN_PASSWORD = "jp123";
+
+let isAdminLoggedIn = false;
+let uploadedPhotoBase64 = "";
+
+const defaultProducts = [
+    {
+        id: 1,
+        name: "iPhone 15 (128GB - Blue)",
+        category: "iPhones & Flagship",
+        price: 64999,
+        specs: "Dynamic Island • 48MP Main Cam • Bajaj EMI",
+        badge: "JP Special",
+        img: "images/iphone-15.jpg",
+        fallback: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 2,
+        name: "Vivo V30 Pro 5G (8GB/256GB)",
+        category: "5G Mobiles",
+        price: 38999,
+        specs: "ZEISS Portrait Camera • Free Smart Watch",
+        badge: "5 Free Gifts",
+        img: "images/vivo-v30pro.jpg",
+        fallback: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 3,
+        name: "Oppo F25 Pro 5G (8GB/128GB)",
+        category: "5G Mobiles",
+        price: 22999,
+        specs: "67W SuperVOOC • 4K Ultra Clear Video",
+        badge: "0% Downpayment",
+        img: "images/oppo-f25.jpg",
+        fallback: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 4,
+        name: "Redmi 13C 5G (4GB/128GB)",
+        category: "5G Mobiles",
+        price: 10999,
+        specs: "50MP AI Cam • 90Hz Display • Free Neckband",
+        badge: "Budget King",
+        img: "images/redmi-13c.jpg",
+        fallback: "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 5,
+        name: "iPhone 13 Pro (256GB) - Demo Condition",
+        category: "Pre-Owned",
+        price: 49500,
+        specs: "90% Battery Health • Untouched Original • Bill & Box",
+        badge: "Verified Used",
+        img: "images/iphone-13pro.jpg",
+        fallback: "https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        id: 6,
+        name: "Apple 20W Original USB-C Adapter",
+        category: "Accessories",
+        price: 1699,
+        specs: "100% Original Apple India Warranty",
+        badge: "Original",
+        img: "images/apple-20w.jpg",
+        fallback: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=500&q=80"
+    }
+];
+
+let products = JSON.parse(localStorage.getItem("jp_mobiles_surandai_stock")) || defaultProducts;
+
+function saveProductsToStorage() {
+    localStorage.setItem("jp_mobiles_surandai_stock", JSON.stringify(products));
+}
+
+const repairTickets = {
+    "JP101": {
+        customer: "Suresh Kumar (Surandai)",
+        device: "iPhone 12 (128GB)",
+        issue: "Original Battery Replacement (100% Health)",
+        status: "Ready for Delivery ✅",
+        bill: "₹2,900 (6 Months Warranty)"
+    },
+    "JP102": {
+        customer: "Ramesh (Alangulam)",
+        device: "Samsung Galaxy A54 5G",
+        issue: "Original Super AMOLED Display Change",
+        status: "Testing in Progress 🔧 (15 Mins)",
+        bill: "₹4,200"
+    }
+};
+
+let activeCategory = "all";
+
+// 1. Page Navigation Router with History API (Fixes Back Button Exit Problem)
+function navigateTo(pageId, pushToHistory = true) {
+    document.querySelectorAll(".page-section").forEach(sec => sec.classList.add("hidden"));
+    const target = document.getElementById(`page-${pageId}`);
+    if (target) target.classList.remove("hidden");
+
+    document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.classList.toggle("active-nav", btn.getAttribute("data-page") === pageId);
+    });
+
+    document.querySelectorAll(".mob-nav-btn").forEach(btn => {
+        btn.classList.toggle("active-mob-nav", btn.getAttribute("data-page") === pageId);
+    });
+
+    if (pageId === "admin") renderAdminView();
+
+    if (pushToHistory) {
+        window.history.pushState({ page: pageId }, "", `#${pageId}`);
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Handle Phone Back Button & Browser Back Button
+window.addEventListener("popstate", (event) => {
+    if (event.state && event.state.page) {
+        navigateTo(event.state.page, false);
+    } else {
+        const hashPage = window.location.hash.replace("#", "") || "home";
+        navigateTo(hashPage, false);
+    }
+});
+
+// Prevent Accidental Backspace Key Exit
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace") {
+        const tag = event.target.tagName.toLowerCase();
+        const isInput = tag === "input" || tag === "textarea" || event.target.isContentEditable;
+        if (!isInput) {
+            event.preventDefault();
+        }
+    }
+});
+
+function quickCategoryJump(cat) {
+    navigateTo("catalog");
+    filterProducts(cat);
+}
+
+// 2. Product Card Renderer
+function createProductCard(item) {
+    const emiPerMonth = Math.round((Number(item.price) || 0) / 8);
+    const isMobile = /mobile|iphone|5g|pre-owned/i.test(item.category);
+    const fallbackImg = item.fallback || "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80";
+
+    return `
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between shadow-md hover:border-sky-500/40 transition">
+            <div>
+                <div class="relative h-36 sm:h-52 bg-slate-950">
+                    <img src="${item.img}" loading="lazy" decoding="async"
+                         onerror="this.src='${fallbackImg}'" 
+                         alt="${item.name}" 
+                         class="w-full h-full object-cover">
+                    <span class="absolute top-2 left-2 bg-sky-400 text-slate-950 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded shadow">
+                        ${item.badge}
+                    </span>
+                </div>
+                <div class="p-3 sm:p-4">
+                    <h4 class="text-sm sm:text-lg font-bold text-white leading-snug line-clamp-1">${item.name}</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5 line-clamp-1">${item.specs}</p>
+                    <div class="mt-2 pt-2 border-t border-slate-800/80 flex items-baseline justify-between">
+                        <span class="text-base sm:text-xl font-bold text-sky-400">${Number(item.price)>0 ? '₹'+Number(item.price).toLocaleString('en-IN') : 'Ask for Price'}</span>
+                        <span class="text-[10px] sm:text-xs text-emerald-400 font-bold">${isMobile && Number(item.price)>0 ? 'EMI ₹'+emiPerMonth+'/m' : item.category}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="px-3 pb-3 sm:px-4 sm:pb-4">
+                <button onclick="openProductEnquiry('${item.name.replace("'", "\\'")}', '${item.category}', ${Number(item.price)||0})" 
+                    class="w-full py-2 sm:py-2.5 rounded-xl bg-emerald-600 active:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow">
+                    <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i> Buy / Enquire
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+function openProductEnquiry(name, category, price) {
+    const phone = /CCTV/i.test(category) ? "919080009439" : "919080003223";
+    const priceText = price > 0 ? `Approx. listed price: ₹${price}` : "Please share price and availability";
+    const msg = `Vanakkam JP ${phone === "919080009439" ? "CCTV" : "Mobiles"}! I am enquiring about ${name} (${category}). ${priceText}. Please share details.`;
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+}
+
+function renderGrids(searchQuery = "") {
+    const homeGrid = document.getElementById("home-featured-grid");
+    const catalogGrid = document.getElementById("catalog-grid");
+
+    if (homeGrid) {
+        homeGrid.innerHTML = products.slice(0, 4).map(createProductCard).join("");
+    }
+
+    if (catalogGrid) {
+        const filtered = products.filter(p => {
+            const matchesCat = activeCategory === "all" || p.category === activeCategory;
+            const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                  p.specs.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCat && matchesSearch;
+        });
+
+        catalogGrid.innerHTML = filtered.length
+            ? filtered.map(createProductCard).join("")
+            : `<p class="text-slate-400 col-span-full text-center py-6 text-sm">No mobile found. Tap WhatsApp to enquire directly!</p>`;
+    }
+}
+
+function filterProducts(category) {
+    activeCategory = category;
+    document.querySelectorAll(".cat-btn").forEach(btn => {
+        btn.classList.toggle("active-cat", btn.getAttribute("data-cat") === category);
+    });
+    renderGrids(document.getElementById("search-input")?.value || "");
+}
+
+function searchCatalog() {
+    renderGrids(document.getElementById("search-input").value);
+}
+
+// 3. Admin Login & Camera Upload
+function handleAdminLogin(e) {
+    e.preventDefault();
+    const user = document.getElementById("login-user").value.trim();
+    const pass = document.getElementById("login-pass").value.trim();
+    const err = document.getElementById("login-error");
+
+    if (user === ADMIN_USERNAME && pass === ADMIN_PASSWORD) {
+        isAdminLoggedIn = true;
+        err.classList.add("hidden");
+        renderAdminView();
+    } else {
+        err.classList.remove("hidden");
+    }
+}
+
+function logoutAdmin() {
+    isAdminLoggedIn = false;
+    renderAdminView();
+}
+
+function renderAdminView() {
+    document.getElementById("admin-login-box").classList.toggle("hidden", isAdminLoggedIn);
+    document.getElementById("admin-dashboard-box").classList.toggle("hidden", !isAdminLoggedIn);
+    if (isAdminLoggedIn) renderAdminTable();
+}
+
+function previewSelectedPhoto(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement("canvas");
+            const maxW = 600;
+            const scale = maxW / img.width;
+            canvas.width = maxW;
+            canvas.height = img.height * scale;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            uploadedPhotoBase64 = canvas.toDataURL("image/jpeg", 0.8);
+            document.getElementById("photo-preview-img").src = uploadedPhotoBase64;
+            document.getElementById("photo-preview-container").classList.remove("hidden");
+        };
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+
+function addNewProduct(e) {
+    e.preventDefault();
+    const name = document.getElementById("adm-name").value;
+    const category = document.getElementById("adm-cat").value;
+    const price = Number(document.getElementById("adm-price").value) || 0;
+    const specs = document.getElementById("adm-specs").value;
+    const folderPath = document.getElementById("adm-img-path").value.trim();
+
+    const finalImage = uploadedPhotoBase64 || folderPath || "images/default-phone.jpg";
+
+    products.unshift({
+        id: Date.now(),
+        name,
+        category,
+        price,
+        specs,
+        badge: "New Arrival",
+        img: finalImage,
+        fallback: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"
+    });
+
+    saveProductsToStorage();
+    renderGrids();
+    renderAdminTable();
+
+    e.target.reset();
+    uploadedPhotoBase64 = "";
+    document.getElementById("photo-preview-container").classList.add("hidden");
+    alert(`"${name}" Added to Catalog!`);
+    navigateTo("catalog");
+}
+
+function deleteProduct(id) {
+    if (!confirm("Remove this mobile from stock?")) return;
+    products = products.filter(p => p.id !== id);
+    saveProductsToStorage();
+    renderGrids();
+    renderAdminTable();
+}
+
+function renderAdminTable() {
+    const container = document.getElementById("admin-inventory-table");
+    if (!container) return;
+
+    container.innerHTML = products.map(item => `
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="flex items-center gap-3">
+                <img src="${item.img}" onerror="this.src='${item.fallback}'" loading="lazy" class="w-12 h-12 object-cover rounded-lg border border-slate-700">
+                <div>
+                    <h4 class="text-sm font-bold text-white">${item.name}</h4>
+                    <p class="text-xs text-sky-400 font-bold">${Number(item.price)>0 ? '₹'+Number(item.price).toLocaleString('en-IN') : 'Ask for Price'} • ${item.category}</p>
+                </div>
+            </div>
+            <button onclick="deleteProduct(${item.id})" class="px-3 py-1.5 rounded-lg bg-red-500/20 text-red-400 text-xs font-bold">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+    `).join("");
+}
+
+function submitCCTVBooking(e) {
+    e.preventDefault();
+    const name=document.getElementById("cctv-customer").value.trim();
+    const phone=document.getElementById("cctv-phone").value.trim();
+    const location=document.getElementById("cctv-location").value.trim();
+    const request=document.getElementById("cctv-request").value;
+    const notes=document.getElementById("cctv-notes").value.trim();
+    const message=`Vanakkam JP CCTV! CCTV service booking request.%0AName: ${encodeURIComponent(name)}%0ACustomer phone: ${encodeURIComponent(phone)}%0ALocation: ${encodeURIComponent(location)}%0ARequest: ${encodeURIComponent(request)}%0ADetails: ${encodeURIComponent(notes)}`;
+    window.open(`https://wa.me/919080009439?text=${message}`, "_blank", "noopener");
+}
+
+function checkRepairStatus() {
+    const code = document.getElementById("repair-ticket-input").value.trim().toUpperCase();
+    const box = document.getElementById("repair-status-output");
+    box.classList.remove("hidden");
+
+    if (repairTickets[code]) {
+        const t = repairTickets[code];
+        box.innerHTML = `
+            <p class="text-sky-400 font-bold">#${code} - ${t.customer}</p>
+            <p class="text-slate-300 text-xs mt-0.5">${t.device} (${t.issue})</p>
+            <p class="text-emerald-400 font-bold mt-1">${t.status} • Bill: ${t.bill}</p>
+        `;
+    } else {
+        box.innerHTML = `<p class="text-red-400 text-xs">Ticket not found! Try <strong>JP101</strong> or <strong>JP102</strong>.</p>`;
+    }
+}
+
+function submitServiceBooking(e) {
+    e.preventDefault();
+    const name = document.getElementById("srv-name").value;
+    const phone = document.getElementById("srv-phone").value;
+    const model = document.getElementById("srv-model").value;
+    const issue = document.getElementById("srv-issue").value;
+
+    const msg = `Vanakkam JP Mobiles Surandai!%0A*Repair Booking*%0AName: ${name}%0APhone: ${phone}%0AModel: ${model}%0AIssue: ${issue}`;
+    window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${msg}`, "_blank");
+}
+
+function calculateExchange() {
+    const base = Number(document.getElementById("ex-base").value);
+    const cond = Number(document.getElementById("ex-cond").value);
+    const box = Number(document.getElementById("ex-box").value);
+    const total = Math.round(base * cond + box + 1000);
+    document.getElementById("ex-result").innerText = `₹${total.toLocaleString('en-IN')}`;
+}
+
+function calculateEMI() {
+    const price = Number(document.getElementById("emi-price").value) || 0;
+    const down = Number(document.getElementById("emi-down").value) || 0;
+    const months = Number(document.getElementById("emi-months").value) || 8;
+    const monthly = Math.round(Math.max(0, price - down) / months);
+    document.getElementById("emi-result").innerText = `₹${monthly.toLocaleString('en-IN')} / month`;
+}
+
+function openWhatsApp(message) {
+    window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
+}
+
+// Initialize App & History State on Load
+document.addEventListener("DOMContentLoaded", () => {
+    renderGrids();
+    calculateExchange();
+    calculateEMI();
+
+    // Set initial history state so pressing Back returns to Home instead of exiting browser
+    const startPage = window.location.hash.replace("#", "") || "home";
+    window.history.replaceState({ page: startPage }, "", `#${startPage}`);
+    if (startPage !== "home") {
+        navigateTo(startPage, false);
+    }
+});
+</script>
 </body>
 </html>
