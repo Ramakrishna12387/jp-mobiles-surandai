@@ -1,5 +1,4 @@
-// JP Mobiles Surandai Configuration
-const SHOP_WHATSAPP = "919876543210"; // Replace with JP Mobiles WhatsApp Number
+const SHOP_WHATSAPP = "919876543210";
 const ADMIN_USERNAME = "jpmobiles";
 const ADMIN_PASSWORD = "jp123";
 
@@ -75,7 +74,6 @@ function saveProductsToStorage() {
     localStorage.setItem("jp_mobiles_surandai_stock", JSON.stringify(products));
 }
 
-// Demo Repair Tickets for JP Mobiles
 const repairTickets = {
     "JP101": {
         customer: "Suresh Kumar (Surandai)",
@@ -95,8 +93,8 @@ const repairTickets = {
 
 let activeCategory = "all";
 
-// 1. Page Navigation Router
-function navigateTo(pageId) {
+// 1. Page Navigation Router with History API (Fixes Back Button Exit Problem)
+function navigateTo(pageId, pushToHistory = true) {
     document.querySelectorAll(".page-section").forEach(sec => sec.classList.add("hidden"));
     const target = document.getElementById(`page-${pageId}`);
     if (target) target.classList.remove("hidden");
@@ -110,15 +108,41 @@ function navigateTo(pageId) {
     });
 
     if (pageId === "admin") renderAdminView();
+
+    if (pushToHistory) {
+        window.history.pushState({ page: pageId }, "", `#${pageId}`);
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+// Handle Phone Back Button & Browser Back Button
+window.addEventListener("popstate", (event) => {
+    if (event.state && event.state.page) {
+        navigateTo(event.state.page, false);
+    } else {
+        const hashPage = window.location.hash.replace("#", "") || "home";
+        navigateTo(hashPage, false);
+    }
+});
+
+// Prevent Accidental Backspace Key Exit
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Backspace") {
+        const tag = event.target.tagName.toLowerCase();
+        const isInput = tag === "input" || tag === "textarea" || event.target.isContentEditable;
+        if (!isInput) {
+            event.preventDefault();
+        }
+    }
+});
 
 function quickCategoryJump(cat) {
     navigateTo("catalog");
     filterProducts(cat);
 }
 
-// 2. Product Card Renderer (2-Col on Phone)
+// 2. Product Card Renderer
 function createProductCard(item) {
     const emiPerMonth = Math.round(item.price / 8);
     const fallbackImg = item.fallback || "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80";
@@ -188,7 +212,7 @@ function searchCatalog() {
     renderGrids(document.getElementById("search-input").value);
 }
 
-// 3. Admin Authentication & Phone Camera Photo Upload
+// 3. Admin Login & Camera Upload
 function handleAdminLogin(e) {
     e.preventDefault();
     const user = document.getElementById("login-user").value.trim();
@@ -267,12 +291,12 @@ function addNewProduct(e) {
     e.target.reset();
     uploadedPhotoBase64 = "";
     document.getElementById("photo-preview-container").classList.add("hidden");
-    alert(`"${name}" Added to JP Mobiles Catalog!`);
+    alert(`"${name}" Added to Catalog!`);
     navigateTo("catalog");
 }
 
 function deleteProduct(id) {
-    if (!confirm("Remove this mobile from JP Mobiles stock?")) return;
+    if (!confirm("Remove this mobile from stock?")) return;
     products = products.filter(p => p.id !== id);
     saveProductsToStorage();
     renderGrids();
@@ -299,7 +323,6 @@ function renderAdminTable() {
     `).join("");
 }
 
-// 4. Service Tracker & Calculators
 function checkRepairStatus() {
     const code = document.getElementById("repair-ticket-input").value.trim().toUpperCase();
     const box = document.getElementById("repair-status-output");
@@ -348,8 +371,16 @@ function openWhatsApp(message) {
     window.open(`https://wa.me/${SHOP_WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank");
 }
 
+// Initialize App & History State on Load
 document.addEventListener("DOMContentLoaded", () => {
     renderGrids();
     calculateExchange();
     calculateEMI();
+
+    // Set initial history state so pressing Back returns to Home instead of exiting browser
+    const startPage = window.location.hash.replace("#", "") || "home";
+    window.history.replaceState({ page: startPage }, "", `#${startPage}`);
+    if (startPage !== "home") {
+        navigateTo(startPage, false);
+    }
 });
